@@ -155,18 +155,7 @@ void mover_motorq3_mm(float milimetros);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	char q1[]="1.5707";
-	char q2[]="150";
-	char q3[]="0";
-	char q4[]="1.4062";
 
-	// Conversión de q1 y q4 a float
-	q1_float = atof(q1);
-	q4_float = atof(q4);
-
-	// Conversión de q2 y q3 a int (truncando los valores decimales)
-	q2_int = (int)atof(q2);
-	q3_int = (int)atof(q3);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -199,6 +188,126 @@ int main(void)
 
   A4988_Setup();
   Home();
+
+  char q1[]="1.5707";
+  	char q2[]="150";
+  	char q3[]="0";
+  	char q4[]="1.5707";
+
+  	// Conversión de q1 y q4 a float
+  	q1_float = atof(q1);
+  	q4_float = atof(q4);
+
+  	// Conversión de q2 y q3 a int (truncando los valores decimales)
+  	q2_int = (int)atof(q2);
+  	q3_int = (int)atof(q3);
+
+  	 mover_motorq1(q1_float);
+  	 mover_motorq2_mm(q2_int);
+  	 mover_motorq3_mm(q3_int);
+  	 TIM1->CCR2 = radianes_a_valor(q4_float);
+
+  	 HAL_Delay(2000);
+
+  	 strcpy(q1, "2.8274");
+  	 strcpy(q2, "155");
+
+  	 // Conversión de q1 y q4 a float
+  	 q1_float = atof(q1);
+
+
+  	 // Conversión de q2 y q3 a int (truncando los valores decimales)
+  	 q2_int = (int)atof(q2);
+
+
+  	 mover_motorq1(q1_float);
+  	 mover_motorq2_mm(q2_int);
+  	 mover_motorq3_mm(q3_int);
+  	 TIM1->CCR2 = radianes_a_valor(q4_float);
+
+  	 HAL_Delay(2000);
+
+  	 strcpy(q1, "4.084");
+  	 strcpy(q2, "145");
+
+
+  	 // Conversión de q1 y q4 a float
+  	 q1_float = atof(q1);
+
+
+  	 // Conversión de q2 y q3 a int (truncando los valores decimales)
+  	 q2_int = (int)atof(q2);
+
+  	 mover_motorq1(q1_float);
+  	 mover_motorq2_mm(q2_int);
+  	 mover_motorq3_mm(q3_int);
+  	 TIM1->CCR2 = radianes_a_valor(q4_float);
+
+  	 HAL_Delay(2000);
+
+  	strcpy(q1, "1.5707");
+  	strcpy(q2, "140");
+  	strcpy(q3, "48");
+  	strcpy(q4, "1.74533");
+
+
+  	// Conversión de q1 y q4 a float
+  	q1_float = atof(q1);
+  	q4_float = atof(q4);
+
+
+  	// Conversión de q2 y q3 a int (truncando los valores decimales)
+  	q2_int = (int)atof(q2);
+  	q3_int = (int)atof(q3);
+
+  	mover_motorq1(q1_float);
+  	mover_motorq2_mm(q2_int);
+  	mover_motorq3_mm(q3_int);
+  	TIM1->CCR2 = radianes_a_valor(q4_float);
+
+  	HAL_Delay(2000);
+
+  	strcpy(q1, "3.1415");
+  	strcpy(q2, "145");
+  	strcpy(q3, "95");
+  	strcpy(q4, "1.8326");
+
+  	// Conversión de q1 y q4 a float
+  	q1_float = atof(q1);
+  	q4_float = atof(q4);
+
+  	// Conversión de q2 y q3 a int (truncando los valores decimales)
+  	q2_int = (int)atof(q2);
+  	q3_int = (int)atof(q3);
+
+  	mover_motorq1(q1_float);
+  	mover_motorq2_mm(q2_int);
+  	mover_motorq3_mm(q3_int);
+  	TIM1->CCR2 = radianes_a_valor(q4_float);
+
+  	HAL_Delay(2000);
+
+  	strcpy(q1, "2.82743");
+  	strcpy(q2, "165");
+  	strcpy(q3, "179");
+  	strcpy(q4, "1.91986");
+
+  	// Conversión de q1 y q4 a float
+  	q1_float = atof(q1);
+  	q4_float = atof(q4);
+
+  	// Conversión de q2 y q3 a int (truncando los valores decimales)
+  	q2_int = (int)atof(q2);
+  	q3_int = (int)atof(q3);
+
+  	mover_motorq1(q1_float);
+  	mover_motorq2_mm(q2_int);
+  	mover_motorq3_mm(q3_int);
+  	TIM1->CCR2 = radianes_a_valor(q4_float);
+
+  	HAL_Delay(2000);
+//  TIM1->CCR2 = 181;
+//  TIM1->CCR4 = 183;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -209,11 +318,47 @@ int main(void)
 //	              HAL_Delay(100);
 //	              HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
 //	              HAL_Delay(100);
-	  mover_motorq1(q1_float);
-	  mover_motorq2_mm(q2_int);
-	  mover_motorq3_mm(q3_int);
-	  TIM1->CCR2 = radianes_a_valor(q4_float);
-	  TIM1->CCR4 = 183;
+
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(0.174533);//10
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(0.349066);//20
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(0.523599);//30
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(0.698132);//40
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(0.872665);//50
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(1.0472);//60
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(1.22173);//70
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(1.39626);//80
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(1.5708);//90
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(1.74533);//100
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(1.91986);//110
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(2.0944);//120
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(2.26893);//130
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(2.44346);//140
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(2.61799);//150
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(2.79253);//160
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(2.96706);//170
+//	  HAL_Delay(500);
+//	  TIM1->CCR2 = radianes_a_valor(3.14159);//180
+//	  HAL_Delay(500);
+
+
+//	  TIM1->CCR4 = 183;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -719,14 +864,14 @@ void motor_control1(void) {
 
     }
 
-//    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, GPIO_PIN_RESET);
-//    for (int i = 0; i < 2000; i++) {
-//    	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9, GPIO_PIN_SET);
-//    	HAL_Delay(1);
-//    	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9, GPIO_PIN_RESET);
-//    	HAL_Delay(1);
-//    }
-//    HAL_Delay(500);
+    HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, GPIO_PIN_RESET);
+    for (int i = 0; i < 70; i++) {
+    	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9, GPIO_PIN_SET);
+    	HAL_Delay(1);
+    	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9, GPIO_PIN_RESET);
+    	HAL_Delay(1);
+    }
+    HAL_Delay(500);
 
     motor_running1 = 1;
 }
